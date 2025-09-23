@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#header {
+  background-color: dimgray;
+  height: 2.5rem;
+  border-bottom: 2rem solid LightCoral;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: white;
+}
+
+#title {
+  height: 25.5rem;
+  background-color: lightgray;
+  text-align: center;
+}
+
+#about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+#about img {
+  height: 24.5rem;
+}
+
+#about h3,
+#fav h3 {
+  flex-basis: 100%;
+}
+
+h3 {
+  color: LightCoral;
+  width: 10rem;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+#fav {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-evenly;
+}
+
+#fav {
+  align-items: flex-start;
+}
