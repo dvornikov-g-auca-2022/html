@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: url("https://cdn.imgchest.com/files/345xc9eon7w.png"); /* replace yellow image web address FuMing emails you */
+    opacity: .5;
+    background-repeat: no-repeat;
+}
+.container {
+    max-width: 1400px;
+    display: flex;          /* make children (box1, box2) line up in a row */
+    flex-direction: row;
+    flex-wrap: wrap;        /* allow items to wrap to next row */
+    gap: 12px;              /* optional spacing between boxes */
+}
+.container > * {
+    background-color: lightblue;
+    font-size: 10rem;
+    height: 200px;
+    color: blue;
+    border: 2px dashed blue;
+    justify-content: space-between;
+}
+
+.box1{
+    flex-direction: row;
+    flex: 0 0 195px;
+}
+.box2{
+    flex-direction: row;
+    flex-grow: 1;
+}
+.box3{
+    flex-direction: row;
+    flex-grow: 1;
+    flex-basis: 1160px;
+}
+.box4{
+    flex-direction: row;
+    flex-grow: 1;
+    flex-basis: 108px;
+}
+.box5{
+    flex-direction: row;
+    flex-basis: 108px;
+    flex-grow: 1;
+}
+.box6{
+    flex-direction: row;
+    flex-grow: 1;
+    height: 197px;
+}
