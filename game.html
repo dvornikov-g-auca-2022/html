@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Tic Tac Toe (HTML/CSS only markup + inline handler)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+    :root { color-scheme: light dark; }
+  body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; min-height:100dvh; margin:0; padding:2rem; gap:1.5rem; background:linear-gradient(135deg,#f5f7fa,#dfe7ed); color:#000; }
+    h1 { margin:0 0 .25rem; font-size:clamp(1.6rem,3vw,2.4rem); letter-spacing:.06em; }
+  p.note { margin:0; font-size:.85rem; color:#000; }
+    table { border-collapse:collapse; box-shadow:0 4px 18px -6px rgba(0,0,0,.25); background:#fff; }
+  td { width:90px; height:90px; text-align:center; vertical-align:middle; font-size:3rem; font-weight:600; line-height:1; cursor:pointer; user-select:none; border:4px solid #222; transition:background .25s, color .25s; color:#000; }
+  td:hover { background:#f0f0f0; color:#000; }
+    /* Remove outer double border look */
+    table tr:first-child td { border-top-width:0; }
+    table tr:last-child  td { border-bottom-width:0; }
+    table tr td:first-child { border-left-width:0; }
+    table tr td:last-child  { border-right-width:0; }
+    .board-wrap { position:relative; }
+    .reset { display:inline-block; padding:.6rem 1rem; background:#222; color:#fff; text-decoration:none; border-radius:.55rem; font-weight:600; letter-spacing:.04em; font-size:.9rem; box-shadow:0 2px 6px -2px rgba(0,0,0,.4); }
+    .reset:hover { background:#000; }
+  footer { margin-top:1rem; font-size:.7rem; color:#000; }
+</style>
+</head>
+<body>
+  <h1>Tic Tac Toe</h1>
+  <p class="note">Click a square to play. X starts. First line of three wins.</p>
+
+  <div class="board-wrap">
+    <!--
+      Inline onclick handler per request. It toggles this.t boolean to alternate X / O.
+      Win detection: Builds a 9-char string of cell contents (spaces for empty) in row-major order.
+      Regex matches any winning 3-in-a-row (rows, columns, diagonals) for the same symbol.
+    -->
+    <table
+      onclick="(function(e){var s=e.target;if(s.tagName==='TD'&&!s.innerHTML){s.innerHTML=(this.t=!this.t)?'X':'O';var line=[...this.getElementsByTagName('td')].map(c=>c.innerHTML||' ').join('');if(/^(?:([XO])\1\1......|...([XO])\2\2...|......([XO])\3\3|([XO])..\4..\4..|.([XO])..\5..\5.|..([XO])..\6..\6|([XO])...\7...\7|..([XO]).\8.\8..)$/.test(line)){setTimeout(()=>alert(s.innerHTML+' wins!'),10);}}}).call(this,event)">
+      <tbody>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <a class="reset" href="game.html" rel="nofollow">Reset Game</a>
+
+  <footer>Pure HTML/CSS layout + inline handler. No external JS file used.</footer>
+</body>
+</html>
