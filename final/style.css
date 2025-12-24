@@ -140,18 +140,15 @@ header .currency span{text-align:right;width:43px;display:inline-block;justify-c
   .header-meta{flex:0 0 auto}
 }
 
-/* Оригинал: @media (min-width:768px) and (max-width:992px) меняет ширины в хедере */
 @media (min-width:768px) and (max-width:992px){
   .logo{flex:0 0 22%}
   .header-links{flex:0 0 15%}
   .header-social{flex:0 0 29%}
   .header-meta{flex:0 0 34%}
 
-  /* Оригинал: header .lang{padding-left:15px; padding-right:0} в этом брейкпоинте */
   .header-links.lang{padding-left:15px;padding-right:0}
 }
 
-/* Bootstrap-like MD: col-md-2/2/4/4 (если ширина чуть больше 992) */
 @media (min-width:993px) and (max-width:1199px){
   .logo{flex:0 0 16.6667%}
   .header-links{flex:0 0 16.6667%}
@@ -172,7 +169,6 @@ header .currency span{text-align:right;width:43px;display:inline-block;justify-c
   margin-top: 0px;
 }
 
-/* Hamburger button is only for style2.css */
 .hamburger-btn{display:none !important;}
 
 /* Nav */
@@ -296,7 +292,6 @@ header .currency span{text-align:right;width:43px;display:inline-block;justify-c
   border-bottom:1px double var(--line);
 }
 
-/* News two columns (как в оригинале: лента слева, blockNews справа) */
 .news-two{
   display:grid;
   grid-template-columns: 1fr 1fr;

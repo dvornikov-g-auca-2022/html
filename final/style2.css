@@ -1,4 +1,3 @@
-/* JS-driven hamburger button (виден только когда активен style2.css) */
 .hamburger-btn{display:none}
 
 @media (max-width:500px){
